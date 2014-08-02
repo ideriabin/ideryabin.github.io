@@ -1,0 +1,39 @@
+body
+  font-family 'Open Sans', sans-serif
+  font-weight 300
+  color $cLightRed
+  background-color $cDarkRed
+  opacity 0
+  &.ready
+    opacity 1
+    transition opacity 1s linear
+
+a
+  color $cPink
+  text-decoration none
+  &:hover
+    text-decoration underline
+
+.content
+  position relative
+  margin 50px auto 30px
+  max-width 800px
+  padding-left ($wImage + 30px)
+
+.me
+  position absolute
+  top 0
+  left 0
+  width $wImage
+  border-radius ($wImage / 2)
+
+.find-me
+  margin-top 50px
+  ul
+    display inline-block
+    list-style none
+    margin 0
+    padding 0
+    li
+      display inline-block
+      margin-left 1em
