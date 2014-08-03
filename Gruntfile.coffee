@@ -14,8 +14,8 @@ module.exports = (grunt) ->
       atBegin: true
       interrupt: true
       livereload: true
-    hbs:
-      files: 'src/content/**/*.hbs'
+    content:
+      files: 'src/content/**/*.*'
       tasks: 'assemble'
     stylus:
       files: 'src/stylus/**/*.styl'
@@ -33,6 +33,7 @@ module.exports = (grunt) ->
     options:
       layoutdir: 'src/content/layouts'
       partials: 'src/content/partials/**/*.hbs'
+      data: 'src/content/data/*.yml'
       assets: 'assets'
       layout: 'default.hbs'
     posts:
