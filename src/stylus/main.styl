@@ -1,6 +1,7 @@
 body
   font-family 'Open Sans', sans-serif
   font-weight 300
+  font-size 0.9em
   color $cLightRed
   background-color $cDarkRed
   opacity 0
@@ -15,20 +16,30 @@ a
     text-decoration underline
 
 .content
+  box-sizing border-box
   position relative
-  margin 50px auto 30px
+  margin 5% auto
   max-width 800px
-  padding-left ($wImage + 30px)
+  width 80%
+
+article
+.find-me
+  padding-left ($wImage + 5)
 
 .me
   position absolute
   top 0
   left 0
   width $wImage
-  border-radius ($wImage / 2)
+  border-radius 50%
+
+h1
+  font-size 1.4em
+  font-weight normal
+  color $cPink
 
 .find-me
-  margin-top 50px
+  margin-top 5%
   ul
     display inline-block
     list-style none
@@ -37,3 +48,23 @@ a
     li
       display inline-block
       margin-left 1em
+
+@media screen and (max-device-width: 800px)
+  body
+    font-size 1.4em
+  h1
+    font-size 1.2em
+  .content
+    width 90%
+  article
+  .find-me
+    padding-left 0
+  .me
+    position static
+    display block
+    margin 0 auto 50px
+    width $wImage*2
+
+@media screen and (max-device-width: 480px)
+  body
+    font-size 2.4em

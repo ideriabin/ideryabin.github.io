@@ -5,8 +5,6 @@ module.exports = (grunt) ->
   config.connect =
     dev:
       options:
-        hostname: 'localhost'
-        base: 'www'
         keepalive: true
         livereload: true
         open: true
@@ -29,17 +27,18 @@ module.exports = (grunt) ->
       import: ['mixins','vars']
     all:
       files:
-        'www/css/styles.css': 'src/stylus/*.styl'
+        'assets/css/styles.css': 'src/stylus/*.styl'
 
   config.assemble =
     options:
       layoutdir: 'src/content/layouts'
       partials: 'src/content/partials/**/*.hbs'
+      assets: 'assets'
       layout: 'default.hbs'
     posts:
       expand: true
       cwd: 'src/content/pages'
-      dest: 'www'
+      dest: '.'
       src: '*.hbs'
       ext: '.html'
 
