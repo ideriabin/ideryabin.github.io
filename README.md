@@ -1,3 +1,3 @@
 # Мой личный сайт
 
-Сделан с помощью [Assemble](//assemble.io).
+Сделан с помощью [Assemble](http://assemble.io/).
