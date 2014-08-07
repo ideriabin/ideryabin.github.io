@@ -1,7 +1,7 @@
 body
   font-family 'Open Sans', sans-serif
   font-size 0.9em
-  color $cLightRed
+  color $cPink
   background-color $cDarkRed
   opacity 0
   &.ready
@@ -9,7 +9,7 @@ body
     transition opacity 1s linear
 
 a
-  color $cPink
+  color lighten($cPink, 50%)
   text-decoration none
   &:hover
     text-decoration underline
@@ -25,9 +25,10 @@ a
 .content
   box-sizing border-box
   position relative
-  margin 5% auto 0
-  max-width 800px
+  margin 3% auto 0
+  max-width $wMax
   width 80%
+  padding-bottom 1%
 
 article
 .find-me
@@ -43,7 +44,7 @@ article
 h1
   font-size 1.4em
   font-weight normal
-  color $cPink
+  color lighten($cPink, 50%)
 
 .find-me
   margin-top 5%
