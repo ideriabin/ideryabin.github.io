@@ -1,0 +1,31 @@
+{
+    "name": "Игорь Дерябин",
+    "title": "фронтенд-разработчик",
+    "contacts": [
+        {
+            "name": "cv",
+            "title": "Резюме",
+            "url": "https://docs.google.com/document/d/1dFiwKBFTLUPBae6utCxroHDQImXs5R4-k8jjfpfdQFI/edit?usp=docslist_api"
+        },
+        {
+            "name": "email",
+            "title": "E-mail",
+            "url": "mailto:igor@rodweb.com"
+        },
+        {
+            "name": "twitter",
+            "title": "Twitter",
+            "url": "https://twitter.com/deryabini"
+        },
+        {
+            "name": "moikrug",
+            "title": "Мой круг",
+            "url": "https://moikrug.ru/rodweb"
+        },
+        {
+            "name": "github",
+            "title": "Github",
+            "url": "https://github.com/rodweb"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+include ./mixins/icon
+
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0')
+    title #{name} — #{title}
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,300&subset=cyrillic')
+    link(rel='stylesheet' href='/stylesheets/main.css')
+  body
+    .page
+      article.profile
+        .profile__pic
+        h1.profile__name= name
+        h2.profile__title= title
+        div.contacts.profile__contacts
+          each item in contacts
+            a.contacts__item(href=item.url target='_blank' class='contacts__item--#{item.name}' data-title=item.title)
+              if item.name == 'moikrug'
+                span.contacts__icon M
+              else
+                +icon(item.name).contacts__icon

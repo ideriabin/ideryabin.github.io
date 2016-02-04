@@ -1,0 +1,16 @@
+$cl-primary = #B51504
+$cl-light = lighten($cl-primary, 55%)
+$cl-mute = desaturate($cl-light, 90%)
+
+@require 'normalize'
+@require 'blocks/page'
+@require 'blocks/profile'
+@require 'blocks/contacts'
+
+html
+  font-size 62.5%
+  font-weight 300
+
+a
+  color inherit
+  outline none
