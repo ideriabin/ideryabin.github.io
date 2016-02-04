@@ -9,7 +9,7 @@
       "css": {
         "in": "./src/stylesheets/index.styl",
         "out": "./public/stylesheets/main.css",
-        "glob": "src/stylesheets/**/*.styl"
+        "glob": "./src/stylesheets/**/*.styl"
       },
       "html": {
         "in": "./src/templates/*.jade",
@@ -23,8 +23,8 @@
       },
       "icons": {
         "in": "./src/icons/**/*.svg",
-        "dest": "public",
-        "dir": ".",
+        "dest": "./public/",
+        "dir": "./",
         "file": "icons.svg"
       }
     }
@@ -35,8 +35,9 @@
     "html": "./node_modules/.bin/jade -O $npm_package_config_paths_html_data $npm_package_config_paths_html_in -o $npm_package_config_paths_html_out",
     "images": "./node_modules/.bin/imagemin -o 7 $npm_package_config_paths_images_in $npm_package_config_paths_images_out",
     "icons": "./node_modules/.bin/svg-sprite -ls --symbol-dest $npm_package_config_paths_icons_dir --symbol-sprite $npm_package_config_paths_icons_file --transform-svgo svgo.json $npm_package_config_paths_icons_in -D $npm_package_config_paths_icons_dest",
+    "start": "npm run -s images && npm run -s icons && node server",
     "build": "npm run html && npm run css:build && npm run images && npm run icons",
-    "deploy": "cp CNAME public/ && npm run build && ./node_modules/.bin/gh-pages -d ./public/ -b master"
+    "deploy": "cp CNAME ./public/ && npm run build && ./node_modules/.bin/gh-pages -d ./public/ -b master"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.1",
