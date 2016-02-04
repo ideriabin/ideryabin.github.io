@@ -1,0 +1,6 @@
+{
+  "plugins": [
+    { "mergePaths": true },
+    { "removeAttrs": { "attrs": "(fill|stroke)" } }
+  ]
+}

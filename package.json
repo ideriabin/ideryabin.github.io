@@ -1,11 +1,52 @@
 {
-  "name": "rodweb",
-  "homepage": "http://rodweb.ru",
+  "name": "rodweb.ru",
+  "config": {
+    "paths": {
+      "compiled": [
+        "./public/stylesheets/*.css",
+        "./public/*.html"
+      ],
+      "css": {
+        "in": "./src/stylesheets/index.styl",
+        "out": "./public/stylesheets/main.css",
+        "glob": "src/stylesheets/**/*.styl"
+      },
+      "html": {
+        "in": "./src/templates/*.jade",
+        "out": "./public/",
+        "data": "./src/data.json",
+        "glob": "./src/templates/**/*.jade"
+      },
+      "images": {
+        "in": "./src/images/**/*",
+        "out": "./public/images/"
+      },
+      "icons": {
+        "in": "./src/icons/**/*.svg",
+        "dest": "public",
+        "dir": ".",
+        "file": "icons.svg"
+      }
+    }
+  },
+  "scripts": {
+    "css:dev": "./node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap-inline $npm_package_config_paths_css_in -o $npm_package_config_paths_css_out",
+    "css:build": "./node_modules/.bin/stylus -u autoprefixer-stylus -c $npm_package_config_paths_css_in -o $npm_package_config_paths_css_out",
+    "html": "./node_modules/.bin/jade -O $npm_package_config_paths_html_data $npm_package_config_paths_html_in -o $npm_package_config_paths_html_out",
+    "images": "./node_modules/.bin/imagemin -o 7 $npm_package_config_paths_images_in $npm_package_config_paths_images_out",
+    "icons": "./node_modules/.bin/svg-sprite -ls --symbol-dest $npm_package_config_paths_icons_dir --symbol-sprite $npm_package_config_paths_icons_file --transform-svgo svgo.json $npm_package_config_paths_icons_in -D $npm_package_config_paths_icons_dest",
+    "build": "npm run css:build && npm run html && npm run images && npm run icons",
+    "deploy": "npm run build"
+  },
   "devDependencies": {
-    "assemble": "^0.4.41",
-    "grunt": "^0.4.5",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-stylus": "^0.18.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "autoprefixer-stylus": "^0.9.1",
+    "browser-sync": "^2.11.1",
+    "imagemin": "^4.0.0",
+    "imagemin-cli": "^2.1.0",
+    "jade": "^1.11.0",
+    "normalize.styl": "^3.0.3",
+    "stylus": "^0.53.0",
+    "svg-sprite": "^1.2.19",
+    "yargs": "^3.32.0"
   }
 }
