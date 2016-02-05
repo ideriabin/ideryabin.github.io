@@ -1,40 +1,38 @@
 {
   "name": "rodweb.ru",
   "config": {
-    "paths": {
-      "compiled": [
-        "./public/stylesheets/*.css",
-        "./public/*.html"
-      ],
-      "css": {
-        "in": "./src/stylesheets/global.styl",
-        "out": "./public/stylesheets/main.css",
-        "glob": "./src/stylesheets/**/*.styl"
-      },
-      "html": {
-        "in": "./src/templates/pages/*.jade",
-        "out": "./public/",
-        "data": "./src/data.json",
-        "glob": "./src/templates/**/*.jade"
-      },
-      "images": {
-        "in": "./src/images/**/*",
-        "out": "./public/images/"
-      },
-      "icons": {
-        "in": "./src/icons/**/*.svg",
-        "dest": "./public/",
-        "dir": "./",
-        "file": "icons.svg"
-      }
+    "compiled": [
+      "./public/stylesheets/*.css",
+      "./public/*.html"
+    ],
+    "css": {
+      "in": "./src/stylesheets/global.styl",
+      "out": "./public/stylesheets/main.css",
+      "glob": "./src/stylesheets/**/*.styl"
+    },
+    "html": {
+      "in": "./src/templates/pages/*.jade",
+      "out": "./public/",
+      "data": "./src/data.json",
+      "glob": "./src/templates/**/*.jade"
+    },
+    "images": {
+      "in": "./src/images/**/*",
+      "out": "./public/images/"
+    },
+    "icons": {
+      "in": "./src/icons/**/*.svg",
+      "dest": "./public/",
+      "dir": "./",
+      "file": "icons.svg"
     }
   },
   "scripts": {
-    "css:dev": "./node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap-inline $npm_package_config_paths_css_in -o $npm_package_config_paths_css_out",
-    "css:build": "./node_modules/.bin/stylus -u autoprefixer-stylus -c $npm_package_config_paths_css_in -o $npm_package_config_paths_css_out",
-    "html": "./node_modules/.bin/jade -O $npm_package_config_paths_html_data $npm_package_config_paths_html_in -o $npm_package_config_paths_html_out",
-    "images": "./node_modules/.bin/imagemin -o 7 $npm_package_config_paths_images_in $npm_package_config_paths_images_out",
-    "icons": "./node_modules/.bin/svg-sprite -ls --symbol-dest $npm_package_config_paths_icons_dir --symbol-sprite $npm_package_config_paths_icons_file --transform-svgo svgo.json $npm_package_config_paths_icons_in -D $npm_package_config_paths_icons_dest",
+    "css:dev": "./node_modules/.bin/stylus -u autoprefixer-stylus --sourcemap-inline $npm_package_config_css_in -o $npm_package_config_css_out",
+    "css:build": "./node_modules/.bin/stylus -u autoprefixer-stylus -c $npm_package_config_css_in -o $npm_package_config_css_out",
+    "html": "./node_modules/.bin/jade -O $npm_package_config_html_data $npm_package_config_html_in -o $npm_package_config_html_out",
+    "images": "./node_modules/.bin/imagemin -o 7 $npm_package_config_images_in $npm_package_config_images_out",
+    "icons": "./node_modules/.bin/svg-sprite -ls --symbol-dest $npm_package_config_icons_dir --symbol-sprite $npm_package_config_icons_file --transform-svgo svgo.json $npm_package_config_icons_in -D $npm_package_config_icons_dest",
     "start": "./node_modules/.bin/babel-node server",
     "build": "npm run html && npm run css:build && npm run images && npm run icons",
     "deploy": "cp CNAME ./public/ && npm run build && ./node_modules/.bin/gh-pages -d ./public/ -b master"

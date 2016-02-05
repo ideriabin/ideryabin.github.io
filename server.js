@@ -1,9 +1,8 @@
 import { argv } from 'yargs';
-import pkg from './package';
+import { config as paths } from './package';
 import browserSync from 'browser-sync';
 import { exec } from 'child_process';
 
-const paths = pkg.config.paths;
 const bs = browserSync.create();
 
 function run(command) {
