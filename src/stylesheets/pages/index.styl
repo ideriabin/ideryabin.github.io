@@ -1,0 +1,33 @@
+.index
+
+  .profile
+    opacity 0
+    animation profile-appear .5s .5s ease-out 1 forwards
+
+  .contacts
+    margin-top 3.5rem
+
+    &__item
+      opacity 0
+      for $i in (1..5)
+        &:nth-child({ $i })
+          animation contacts-appear 1s ($i * .1s + .75s) ease-in-out 1 forwards
+
+@keyframes profile-appear
+  0%
+    transform translateY(-5%)
+    opacity 0
+  100%
+    transform translateY(0)
+    opacity 1
+
+@keyframes contacts-appear
+  0%
+    opacity 0
+  33%
+    transform translateY(-25%)
+  66%
+    transform translateY(25%)
+  100%
+    transform translateY(0)
+    opacity 1

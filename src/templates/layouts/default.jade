@@ -1,4 +1,5 @@
-include ./mixins/icon
+include ../../../node_modules/bemto.jade/bemto
+- set_bemto_settings({ modifier: '--' })
 
 doctype html
 html
@@ -20,16 +21,7 @@ html
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,300&subset=cyrillic')
     link(rel='stylesheet' href='/stylesheets/main.css')
   body
-    .page
-      article.profile
-        .profile__pic
-        h1.profile__name= name
-        h2.profile__title= title
-        div.contacts.profile__contacts
-          each item in contacts
-            a.contacts__item(href=item.url target='_blank' class='contacts__item--#{item.name}' data-title=item.title)
-              if item.name == 'moikrug'
-                span.contacts__icon M
-              else
-                +icon(item.name).contacts__icon
-    include ./partials/ya-metrica
+    +b.page: block content
+    //- Yandex.Metrica
+    script(type='text/javascript').
+      (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter35137405 = new Ya.Metrika({ id:35137405, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");

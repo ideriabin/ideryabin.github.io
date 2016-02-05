@@ -7,12 +7,12 @@
         "./public/*.html"
       ],
       "css": {
-        "in": "./src/stylesheets/index.styl",
+        "in": "./src/stylesheets/global.styl",
         "out": "./public/stylesheets/main.css",
         "glob": "./src/stylesheets/**/*.styl"
       },
       "html": {
-        "in": "./src/templates/*.jade",
+        "in": "./src/templates/pages/*.jade",
         "out": "./public/",
         "data": "./src/data.json",
         "glob": "./src/templates/**/*.jade"
@@ -43,6 +43,7 @@
     "autoprefixer-stylus": "^0.9.1",
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
+    "bemto.jade": "^1.0.0",
     "browser-sync": "^2.11.1",
     "gh-pages": "^0.9.0",
     "imagemin": "^4.0.0",
