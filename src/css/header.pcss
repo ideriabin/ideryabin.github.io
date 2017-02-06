@@ -5,8 +5,12 @@
   font-family: "SignPainter";
   transition: transform var(--duration-content) var(--delay-content);
 
-  @media (--mobile-portrait) {
-    margin-bottom: 10vmin;
+  @media (--xs) and (--landscape) {
+    margin-bottom: 3vmin;
+  }
+
+  @media (--xs) and (--portrait) {
+    margin-bottom: 7.5vmin;
   }
 
   & .title {
@@ -21,8 +25,12 @@
     transition: transform var(--duration-title) var(--delay-title),
                 opacity   var(--duration-title) var(--delay-title);
 
-    @media (--mobile) {
-      font-size: 10vmin;
+    @media (--xs) and (--landscape) {
+      font-size: 12vmin;
+    }
+
+    @media (--xs) and (--portrait) {
+      font-size: 15vmin;
     }
   }
 
@@ -36,8 +44,8 @@
     transform: scale(1.1, 1);
     transition: opacity var(--duration-title) calc(var(--delay-title) + 0.5s);
 
-    @media (max-width: 767px) {
-      margin-top: 0.5rem;
+    @media (--xs) {
+      margin-top: 1vw;
       font-size: 5vmin;
     }
   }
