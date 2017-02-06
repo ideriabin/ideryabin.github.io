@@ -3,6 +3,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.2",
     "cssnano-cli": "^1.0.5",
+    "browser-sync": "^2.18.7",
     "imagemin-cli": "^3.0.0",
     "imagemin-mozjpeg": "^6.0.0",
     "npm-run-all": "^4.0.1",
