@@ -1,0 +1,8 @@
+{
+  "mode": {
+    "symbol": {
+      "dest": "assets",
+      "sprite": "sprite.svg"
+    }
+  }
+}

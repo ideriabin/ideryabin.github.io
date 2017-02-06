@@ -1,0 +1,45 @@
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+  height: 4rem;
+  transition: opacity .5s, z-index .5s step-end;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--slate-grey);
+    border-radius: 50%;
+    opacity: 0.75;
+    animation: bounce var(--duration-spinner) infinite ease-in-out;
+  }
+
+  &::after {
+    background-color: var(--potters-clay);
+    animation-delay: calc(var(--duration-spinner) / -2);
+  }
+
+  &.hidden {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,113 @@
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500rem;
+  padding: 0;
+  list-style: none;
+
+  @media (--mobile) {
+    justify-content: space-around;
+  }
+
+  @media (--mobile-landscape) {
+    margin-top: 10vmin;
+    max-width: none;
+  }
+
+  @media (--mobile-portrait) {
+    margin-top: 15vmin;
+  }
+
+  & .item {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 4.8rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    height: 4.8rem;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    color: var(--potters-clay);
+    border: 1px solid;
+    border-radius: 50%;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform var(--duration-contacts) var(--delay-contacts),
+                opacity   var(--duration-contacts) var(--delay-contacts);
+
+    @media (--mobile) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      height: 3.6rem;
+      color: var(--athens-grey);
+      border-radius: 1.8rem;
+    }
+
+    @media (--mobile-landscape) {
+      flex: 1;
+    }
+
+    @media (--mobile-portrait) {
+      flex: 0 0 40%;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform calc(var(--duration-contacts) / 2);
+
+      & .icon,
+      & .letter {
+        animation-name: rotate;
+        animation-duration: calc(var(--duration-contacts) / 2);
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &:active {
+      color: var(--metallic-bronze);
+      transform: scale(1);
+    }
+  }
+
+  &:not(.ready) .item {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  & .icon {
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+  }
+
+  & .letter {
+    position: relative;
+    flex: 0 0 2rem;
+    line-height: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
