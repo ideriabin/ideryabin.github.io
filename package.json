@@ -2,6 +2,7 @@
   "name": "rodweb",
   "devDependencies": {
     "autoprefixer": "^6.7.2",
+    "browser-sync": "^2.18.7",
     "imagemin-cli": "^3.0.0",
     "imagemin-mozjpeg": "^6.0.0",
     "npm-run-all": "^4.0.1",
@@ -17,6 +18,7 @@
   "scripts": {
     "start": "$(npm bin)/run-s clean img svg \"css -- {@}\" -- -mw",
     "build": "$(npm bin)/run-s clean img svg css cssmin",
+    "server": "$(npm bin)/browser-sync start -sf {index.html,assets/*} --open local",
     "clean": "rm -rf assets/{img/,*.svg,*.css}",
     "svg": "$(npm bin)/svg-sprite -C svg.config.json src/svg/*.svg",
     "img": "$(npm bin)/imagemin -p=mozjpeg src/img/* -o assets/img",

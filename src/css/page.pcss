@@ -5,10 +5,13 @@
   padding-left: 10vw;
   padding-right: 10vw;
 
-  @media (--mobile) {
+  @media (--xs) {
     padding-left: 7.5vw;
     padding-right: 7.5vw;
-    font-size: 4vmin;
+  }
+
+  @media (--xs) {
+    font-size: 2.25vmax;
   }
 
   &::before {
@@ -41,12 +44,20 @@
     text-align: justify;
     text-align-last: center;
 
-    @media (--mobile-landscape) {
+    @media (--xs) and (--landscape) {
       padding-top: 5vmin;
     }
 
-    @media (--mobile-portrait) {
+    @media (--xs) and (--portrait) {
       padding-top: 10vmin;
+    }
+
+    @media (--sm) and (--portrait) {
+      padding-top: 10vh;
+    }
+
+    @media (--sm) and (--landscape) {
+      padding-top: 5vh;
     }
   }
 }

@@ -9,17 +9,21 @@
   padding: 0;
   list-style: none;
 
-  @media (--mobile) {
+  @media (--xs) {
     justify-content: space-around;
   }
 
-  @media (--mobile-landscape) {
+  @media (--xs) and (--landscape) {
     margin-top: 10vmin;
     max-width: none;
   }
 
-  @media (--mobile-portrait) {
-    margin-top: 15vmin;
+  @media (--xs) and (--portrait) {
+    margin-top: 20vmin;
+  }
+
+  @media (--sm) {
+    margin-top: 5vmin;
   }
 
   & .item {
@@ -44,7 +48,7 @@
     transition: transform var(--duration-contacts) var(--delay-contacts),
                 opacity   var(--duration-contacts) var(--delay-contacts);
 
-    @media (--mobile) {
+    @media (--xs) {
       margin-left: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
@@ -53,12 +57,14 @@
       border-radius: 1.8rem;
     }
 
-    @media (--mobile-landscape) {
+    @media (--xs) and (--landscape) {
       flex: 1;
     }
 
-    @media (--mobile-portrait) {
+    @media (--xs) and (--portrait) {
       flex: 0 0 40%;
+      height: 5vh;
+      border-radius: 2.5vh;
     }
 
     &:hover {
