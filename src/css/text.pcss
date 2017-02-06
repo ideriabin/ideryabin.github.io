@@ -1,0 +1,14 @@
+.text {
+
+  & p {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: transform var(--duration-text) var(--delay-text),
+                opacity   var(--duration-text) var(--delay-text);
+  }
+}
+
+.page.ready .text p {
+  transform: translateY(0);
+  opacity: 1;
+}

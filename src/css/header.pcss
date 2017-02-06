@@ -1,0 +1,57 @@
+.header {
+  transform: translateY(calc(50vh - 100%));
+  margin-bottom: 5vmin;
+  text-align: center;
+  font-family: "SignPainter";
+  transition: transform var(--duration-content) var(--delay-content);
+
+  @media (--mobile-portrait) {
+    margin-bottom: 10vmin;
+  }
+
+  & .title {
+    margin-top: 0;
+    margin-bottom: -2rem;
+    text-align: center;
+    letter-spacing: -0.1rem;
+    font: normal 9rem "SignPainter";
+    color: var(--big-stone);
+    opacity: 0;
+    transform: translateY(25%) scale(1.1, 1);
+    transition: transform var(--duration-title) var(--delay-title),
+                opacity   var(--duration-title) var(--delay-title);
+
+    @media (--mobile) {
+      font-size: 10vmin;
+    }
+  }
+
+  & .subtitle {
+    display: block;
+    margin-top: -1rem;
+    font-size: 3.8rem;
+    letter-spacing: 0.1rem;
+    color: var(--potters-clay);
+    opacity: 0;
+    transform: scale(1.1, 1);
+    transition: opacity var(--duration-title) calc(var(--delay-title) + 0.5s);
+
+    @media (max-width: 767px) {
+      margin-top: 0.5rem;
+      font-size: 5vmin;
+    }
+  }
+}
+
+.page.ready .header {
+  transform: translateY(0);
+
+  & .title {
+    transform: scale(1.1, 1);
+    opacity: 1;
+  }
+
+  & .subtitle {
+    opacity: 1;
+  }
+}

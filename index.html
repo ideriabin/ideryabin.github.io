@@ -1,1 +1,95 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><meta property="og:type" content="website"><meta property="og:title" content="Игорь Дерябин"><meta property="og:url" content="http://rodweb.ru"><meta property="og:site_name" content="Игорь Дерябин"><meta property="og:description" content="Фронтенд-разработчик"><meta property="og:image" content="http://rodweb.ru/images/me.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@deryabini"><meta name="twitter:title" content="Игорь Дерябин"><meta name="twitter:description" content="Фронтенд-разработчик"><meta name="twitter:image" content="http://rodweb.ru/images/me.jpg"><title>Игорь Дерябин — Фронтенд-разработчик</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,300&amp;subset=cyrillic"><link rel="stylesheet" href="/stylesheets/main.css"></head><body><div class="page"><article class="index"><div class="profile"><div class="profile__pic"></div><h1 class="profile__name">Игорь Дерябин</h1><h2 class="profile__title">Фронтенд-разработчик</h2></div><div class="contacts"><a href="https://docs.google.com/document/d/1dFiwKBFTLUPBae6utCxroHDQImXs5R4-k8jjfpfdQFI/edit?usp=docslist_api" target="_blank" data-title="Резюме" class="contacts__item"><svg class="icon icon--cv contacts__icon"><use xlink:href="/icons.svg#cv"></use></svg></a><a href="mailto:igor@rodweb.ru" target="_blank" data-title="E-mail" class="contacts__item"><svg class="icon icon--email contacts__icon"><use xlink:href="/icons.svg#email"></use></svg></a><a href="https://twitter.com/deryabini" target="_blank" data-title="Twitter" class="contacts__item"><svg class="icon icon--twitter contacts__icon"><use xlink:href="/icons.svg#twitter"></use></svg></a><a href="https://moikrug.ru/rodweb" target="_blank" data-title="Мой круг" class="contacts__item"><span class="contacts__icon">M</span></a><a href="https://github.com/rodweb" target="_blank" data-title="Github" class="contacts__item"><svg class="icon icon--github contacts__icon"><use xlink:href="/icons.svg#github"></use></svg></a></div></article></div><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter35137405 = new Ya.Metrika({ id:35137405, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:700&text=M" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <main class="page">
+    <article class="content">
+      <header class="header">
+        <h1 class="title">Игорь Дерябин</h1>
+        <span class="subtitle">фронтенд-разработчик</span>
+      </header>
+      <section class="text">
+        <header>
+          <p>
+            Я занимаюсь веб-разработкой с 2008 года.
+          </p>
+        </header>
+        <p>
+          Не стою на месте, постоянно развиваю свои навыки и совершенствуюсь, слежу за новыми веяниями в своей сфере, люблю минималистичность и простоту. Моя специализация — вёрстка, интерфейсы и насыщенные веб-приложения (RIA).
+        </p>
+        <p>
+          Являюсь наставником на базовом и продвинутом интенсивах HTML Academy, считаю, что приобретёнными знаниями нужно делиться. Увлекаюсь английским языком, занимаюсь волонтёрской деятельностью в качестве переводчика.
+        </p>
+      </section>
+      <section class="contacts">
+        <a href="https://docs.google.com/document/d/1dFiwKBFTLUPBae6utCxroHDQImXs5R4-k8jjfpfdQFI" target="_blank" class="item" title="Резюме">
+          <svg class="icon"><use xlink:href="/assets/sprite.svg#cv" /></svg>
+        </a>
+        <a href="mailto:igor@rodweb.ru" class="item" title="E-mail">
+          <svg class="icon"><use xlink:href="/assets/sprite.svg#email" /></svg>
+        </a>
+        <a href="https://moikrug.ru/rodweb" target="_blank" class="item" title="Мой круг">
+          <span class="letter">M</span>
+        </a>
+        <a href="https://github.com/rodweb" target="_blank" class="item" title="GitHub">
+          <svg class="icon"><use xlink:href="/assets/sprite.svg#github" /></svg>
+        </a>
+        <a href="https://twitter.com/deryabini" target="_blank" class="item" title="Twitter">
+          <svg class="icon"><use xlink:href="/assets/sprite.svg#twitter" /></svg>
+        </a>
+        <a href="https://telegram.me/rodweb" target="_blank" class="item" title="Telegram">
+          <svg class="icon"><use xlink:href="/assets/sprite.svg#telegram" /></svg>
+        </a>
+      </section>
+    </article>
+
+    <div class="spinner"></div>
+  </main>
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+    window.addEventListener('load', onLoad);
+
+    function onDOMContentLoaded() {
+      const text = document.querySelector('.text');
+      const paragraphs = text.querySelectorAll('p');
+      const lastParagraph = paragraphs[paragraphs.length - 1];
+      const contacts = document.querySelector('.contacts');
+
+      transitionSequence(paragraphs, 0.33);
+      text.addEventListener('transitionend', (e) => {
+        e.target.style.transitionDelay = null;
+        if (e.target === lastParagraph) {
+          contacts.classList.add('ready');
+        }
+      });
+
+      transitionSequence(contacts.querySelectorAll('.item'), 0.125);
+      contacts.addEventListener('transitionend', (e) => {
+        e.target.style.transitionDelay = null;
+      });
+    }
+
+    function onLoad() {
+      document.querySelector('.spinner').classList.add('hidden');
+      document.querySelector('.page').classList.add('ready');
+    }
+
+    function transitionSequence(collection, multiplier = 1) {
+      collection.forEach(function(item, i) {
+        const duration = parseFloat(window.getComputedStyle(item).transitionDelay);
+        item.style.transitionDelay = (duration + i * multiplier) + 's';
+      });
+    }
+  </script>
+</body>
+</html>

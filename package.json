@@ -1,0 +1,27 @@
+{
+  "name": "rodweb",
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "cssnano-cli": "^1.0.5",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "npm-run-all": "^4.0.1",
+    "postcss-cli": "^2.6.0",
+    "postcss-color-function": "^3.0.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-props": "^1.1.2",
+    "postcss-import": "^9.1.0",
+    "postcss-move-media": "^1.0.0-pre",
+    "postcss-nesting": "^2.3.1",
+    "svg-sprite": "^1.3.6"
+  },
+  "scripts": {
+    "start": "$(npm bin)/run-s clean img svg \"css -- {@}\" -- -mw",
+    "build": "$(npm bin)/run-s clean img svg css cssmin",
+    "clean": "rm -rf assets/{img/,*.svg,*.css}",
+    "svg": "$(npm bin)/svg-sprite -C svg.config.json src/svg/*.svg",
+    "img": "$(npm bin)/imagemin -p=mozjpeg src/img/* -o assets/img",
+    "css": "$(npm bin)/postcss -u postcss-import -u postcss-color-function -u postcss-nesting -u postcss-custom-props -u postcss-custom-media -u autoprefixer -o assets/styles.css src/css/index.pcss",
+    "cssmin": "$(npm bin)/cssnano < assets/styles.css > assets/styles.min.css && mv assets/styles.min.css assets/styles.css"
+  }
+}
